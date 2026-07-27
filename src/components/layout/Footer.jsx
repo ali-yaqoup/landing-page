@@ -19,21 +19,20 @@ export default function Footer() {
             width: 24,
             height: 24,
             borderRadius: 6,
-            background: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+            background: 'linear-gradient(135deg, #22d3ee, #3b82f6)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
           }}
         >
-          <Zap size={12} color="#fff" strokeWidth={2.5} />
+          <Zap size={12} color="#04141b" strokeWidth={2.5} />
         </div>
-        <span style={{ fontWeight: 800, fontSize: '0.95rem', letterSpacing: '-0.03em', color: 'var(--text-3)' }}>
-          Stock<span style={{ color: 'var(--accent)' }}>Flow</span>
+        <span style={{ fontWeight: 800, fontSize: '0.95rem', letterSpacing: '-0.02em', color: 'var(--text-1)' }}>
+          ستوك&nbsp;<span style={{ color: 'var(--accent)' }}>فلو</span>
         </span>
       </div>
-      <span style={{ fontSize: '0.8rem', color: 'var(--text-3)' }}>Smart business management system</span>
-      <span style={{ fontSize: '0.75rem', color: 'var(--text-3)' }}>© 2026 StockFlow</span>
-      <span style={{ fontSize: '0.75rem', color: 'var(--text-3)' }}>Built by StockFlow Studio</span>
+      <span style={{ fontSize: '0.8rem', color: 'var(--text-3)' }}>نظام إدارة الأعمال الذكي — مخزون ومبيعات وتقارير</span>
+      <span style={{ fontSize: '0.75rem', color: 'var(--text-3)' }}>© 2026 ستوك فلو — جميع الحقوق محفوظة</span>
     </footer>
   );
 }

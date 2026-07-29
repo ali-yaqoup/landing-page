@@ -4,6 +4,9 @@ import { AuthContext } from "../context/AuthContext";
 import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
+import TiltCard from "../components/animations/TiltCard";
+import LiveToasts from "../components/animations/LiveToasts";
+import CountUp from "../components/animations/CountUp";
 import {
   Zap,
   Package,
@@ -395,6 +398,21 @@ export default function LandingPage() {
   const demoTotalProfit = demoSales.reduce((sum, s) => sum + s.profit, 780.20);
   const averageMargin = 56.1;
 
+  // Floating live-activity notifications around the hero mockup
+  const liveToasts = language === "ar"
+    ? [
+        { type: "sale", title: "عملية بيع جديدة 🎉", sub: "سماعة لاسلكية × 1 — +$79.99" },
+        { type: "profit", title: "الأرباح بارتفاع", sub: "+8.2% عن الأمس" },
+        { type: "stock", title: "تنبيه مخزون", sub: "لوحة مفاتيح ميكانيكية — باقي 3" },
+        { type: "customer", title: "عميل جديد انضم", sub: "متجر النور — رام الله" },
+      ]
+    : [
+        { type: "sale", title: "New sale recorded 🎉", sub: "Wireless Headset × 1 — +$79.99" },
+        { type: "profit", title: "Profit trending up", sub: "+8.2% vs yesterday" },
+        { type: "stock", title: "Low stock alert", sub: "Mechanical Keyboard — 3 left" },
+        { type: "customer", title: "New customer joined", sub: "Al-Noor Store — Ramallah" },
+      ];
+
   const handleCTA = () => {
     if (user) {
       navigate("/dashboard");
@@ -652,7 +670,8 @@ export default function LandingPage() {
             {/* Column 2: Sleek Interactive POS Sandbox */}
             <div className="lg:col-span-6 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 rounded-2xl blur-2xl opacity-50 dark:opacity-30 -z-10" />
-              
+              <LiveToasts items={liveToasts} />
+              <TiltCard>
               <div className="w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl overflow-hidden font-sans">
                 
                 {/* Header bar */}
@@ -670,11 +689,11 @@ export default function LandingPage() {
                 <div className="p-5 bg-slate-50/50 dark:bg-slate-950/30 grid grid-cols-3 gap-3 border-b border-slate-150 dark:border-slate-800/60 text-start">
                   <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
                     <span className="text-[10px] text-slate-400 dark:text-slate-500 font-semibold block uppercase">{tLP.demo.sales}</span>
-                    <span className="text-lg font-bold text-slate-900 dark:text-white font-mono">{formattedMoney(demoTotalSales)}</span>
+                    <span className="text-lg font-bold text-slate-900 dark:text-white font-mono"><CountUp value={demoTotalSales} format={formattedMoney} /></span>
                   </div>
                   <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
                     <span className="text-[10px] text-slate-400 dark:text-slate-500 font-semibold block uppercase">{tLP.demo.profit}</span>
-                    <span className="text-lg font-bold text-emerald-600 dark:text-emerald-400 font-mono">{formattedMoney(demoTotalProfit)}</span>
+                    <span className="text-lg font-bold text-emerald-600 dark:text-emerald-400 font-mono"><CountUp value={demoTotalProfit} format={formattedMoney} /></span>
                   </div>
                   <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
                     <span className="text-[10px] text-slate-400 dark:text-slate-500 font-semibold block uppercase">{tLP.demo.margin}</span>
@@ -690,8 +709,10 @@ export default function LandingPage() {
                       {Object.keys(demoStock).map((key) => {
                         const item = demoStock[key];
                         return (
-                          <button
+                          <motion.button
                             key={key}
+                            whileHover={item.qty > 0 ? { y: -3 } : undefined}
+                            whileTap={item.qty > 0 ? { scale: 0.95 } : undefined}
                             onClick={() => recordDemoSale(key)}
                             disabled={item.qty <= 0}
                             className={`p-3 rounded-xl border text-start flex flex-col justify-between transition-all group ${
@@ -709,7 +730,7 @@ export default function LandingPage() {
                               </span>
                               <span className="text-xs font-mono font-bold text-slate-900 dark:text-white">{formattedMoney(item.price)}</span>
                             </div>
-                          </button>
+                          </motion.button>
                         );
                       })}
                     </div>
@@ -722,8 +743,16 @@ export default function LandingPage() {
                       <button onClick={resetDemo} className="text-[10px] text-cyan-600 dark:text-cyan-400 font-semibold hover:underline cursor-pointer">{tLP.demo.reset}</button>
                     </div>
                     <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40 p-3.5 space-y-2 max-h-36 overflow-y-auto">
+                      <AnimatePresence initial={false}>
                       {demoSales.map((sale) => (
-                        <div key={sale.id} className="flex justify-between items-center text-xs border-b border-slate-200/55 dark:border-slate-800/40 pb-2 last:border-0 last:pb-0">
+                        <motion.div
+                          key={sale.id}
+                          layout
+                          initial={{ opacity: 0, y: -12, scale: 0.97 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 8 }}
+                          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                          className="flex justify-between items-center text-xs border-b border-slate-200/55 dark:border-slate-800/40 pb-2 last:border-0 last:pb-0">
                           <div className="flex flex-col text-start">
                             <span className="font-semibold text-slate-850 dark:text-slate-200">{getDemoProductName(sale.name)}</span>
                             <span className="text-[10px] text-slate-400 dark:text-slate-500">
@@ -736,13 +765,15 @@ export default function LandingPage() {
                               {tLP.demo.prof}: +{formattedMoney(sale.profit)}
                             </div>
                           </div>
-                        </div>
+                        </motion.div>
                       ))}
+                      </AnimatePresence>
                     </div>
                   </div>
                 </div>
 
               </div>
+              </TiltCard>
             </div>
 
           </div>

@@ -1,8 +1,8 @@
 <div align="center">
 
-# ⚡ ستوك فلو — StockFlow
+# ⚡ StockFlow
 
-**نظام عربي متكامل لإدارة المخزون ونقطة البيع والتقارير الذكية**
+**An Arabic-first business management platform — inventory, point of sale, and smart reports.**
 
 <p>
   <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white&labelColor=0b1220" alt="React 19" />
@@ -10,144 +10,132 @@
   <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white&labelColor=0b1220" alt="Tailwind CSS 4" />
   <img src="https://img.shields.io/badge/Firebase-12-FFCA28?logo=firebase&logoColor=white&labelColor=0b1220" alt="Firebase 12" />
   <img src="https://img.shields.io/badge/Express-5-000000?logo=express&logoColor=white&labelColor=0b1220" alt="Express 5" />
-  <img src="https://img.shields.io/badge/%D8%B9%D8%B1%D8%A8%D9%8A-RTL-10b981?labelColor=0b1220" alt="Arabic RTL" />
+  <img src="https://img.shields.io/badge/Arabic-RTL_first-10b981?labelColor=0b1220" alt="Arabic RTL first" />
 </p>
 
 </div>
 
 ---
 
-<div dir="rtl">
+## 🧭 Overview
 
-## 🧭 نظرة عامة
+**StockFlow** is a web platform for managing small-to-medium businesses — real-time inventory tracking, point-of-sale (POS) sales recording, expense logging, customer & supplier management, and clear profit reports that help owners make confident decisions.
 
-**ستوك فلو** منصّة ويب لإدارة الأنشطة التجارية الصغيرة والمتوسطة — من تتبّع المخزون لحظيًا، إلى تسجيل المبيعات (POS)، والمصاريف، والعملاء والموردين، وصولًا لتقارير أرباح واضحة تساعدك تاخد قرارك بثقة.
+Built **Arabic-first** (full RTL with English support), with a signature dark `slate + cyan` theme and interactive motion that makes the experience feel alive.
 
-مبنيّة **بالعربي أولًا** (RTL كامل مع دعم الإنجليزية)، بثيم داكن أنيق بهوية `slate + cyan`، وأنيميشن تفاعلي يخلّي التجربة حيّة.
+## ✨ Features
 
-## ✨ المزايا
+| | Feature | Description |
+|---|---------|-------------|
+| 📊 | **Dashboard** | Live KPIs: sales, profit, margin, and low-stock alerts |
+| 📦 | **Products & Categories** | Full catalog with images, prices/costs, and a stock movement history |
+| 🛒 | **Sales (POS)** | Fast sale recording with automatic stock decrement |
+| 💸 | **Expenses** | Log and categorize operating expenses |
+| 👥 | **Customers & Suppliers** | Relationships, balances, and transaction history |
+| 📈 | **Reports** | Analytics and historical business performance |
+| 🏬 | **Branches & Warehouses** | Switch between branches/warehouses from the top bar |
+| 🖼️ | **Cloud images** | Product image uploads via Cloudinary with automatic optimization |
+| 🌍 | **Arabic / English** | Full i18n with dynamic RTL/LTR — Arabic is the default |
+| 🌗 | **Dark / Light theme** | Dark is the default brand identity, toggle anytime |
+| 🎬 | **Interactive motion** | Live POS simulator on the landing hero: 3D tilt, count-up numbers, live toasts (framer-motion) |
+| 🔐 | **Secure auth** | Firebase Authentication with protected routes |
 
-| | الميزة | الوصف |
-|---|--------|-------|
-| 📊 | **لوحة التحكم** | مؤشرات أداء فورية: المبيعات، الأرباح، هامش الربح، وتنبيهات المخزون |
-| 📦 | **المنتجات والتصنيفات** | كتالوج كامل مع صور، أسعار وتكاليف، وسجل حركات المخزون (StockHistory) |
-| 🛒 | **المبيعات (POS)** | تسجيل عمليات بيع سريع مع خصم تلقائي من المخزون |
-| 💸 | **المصاريف** | تسجيل وتصنيف المصاريف التشغيلية |
-| 👥 | **العملاء والموردون** | إدارة علاقات وأرصدة وتعاملات |
-| 📈 | **التقارير** | تحليلات وأداء تاريخي للنشاط |
-| 🏬 | **فروع ومستودعات** | التبديل بين الفروع والمستودعات من الشريط العلوي |
-| 🖼️ | **صور سحابية** | رفع صور المنتجات عبر Cloudinary مع تحسين تلقائي للجودة والحجم |
-| 🌍 | **عربي / إنجليزي** | i18n كامل مع اتجاه RTL/LTR ديناميكي — العربية هي الافتراضية |
-| 🌗 | **ثيم داكن / فاتح** | الثيم الداكن هو الهوية الافتراضية، مع إمكانية التبديل |
-| 🎬 | **أنيميشن تفاعلي** | محاكي POS حي في صفحة الهبوط: إمالة ثلاثية الأبعاد، أرقام تعدّ، وإشعارات حية (framer-motion) |
-| 🔐 | **مصادقة آمنة** | Firebase Authentication مع مسارات محمية (Protected Routes) |
+## 🛠️ Tech Stack
 
-## 🛠️ التقنيات
+| Layer | Technology |
+|-------|------------|
+| UI | React 19 + Vite 8 |
+| Styling | Tailwind CSS v4 (central design system with `sys-*` tokens) |
+| Motion | framer-motion 12 |
+| Icons | lucide-react |
+| Routing | react-router-dom 7 |
+| Database & Auth | Firebase (Firestore + Auth) |
+| Server | Express 5 (Cloudinary image upload/delete + app serving) |
+| Fonts | Cairo (headings) + Tajawal (body) |
+| Linting | oxlint |
 
-| الطبقة | التقنية |
-|--------|---------|
-| واجهة المستخدم | React 19 + Vite 8 |
-| التنسيق | Tailwind CSS v4 (نظام تصميم مركزي بتوكنز `sys-*`) |
-| الحركة | framer-motion 12 |
-| الأيقونات | lucide-react |
-| التوجيه | react-router-dom 7 |
-| قاعدة البيانات والمصادقة | Firebase (Firestore + Auth) |
-| الخادم | Express 5 (رفع/حذف صور Cloudinary + تقديم التطبيق) |
-| الخطوط | Cairo (عناوين) + Tajawal (نصوص) |
-| الفحص | oxlint |
-
-## 🚀 التشغيل السريع
-
-</div>
+## 🚀 Quick Start
 
 ```bash
-# 1) استنساخ المشروع
+# 1) Clone the repository
 git clone https://github.com/ali-yaqoup/Landingpage-.git
 cd Landingpage-
 
-# 2) تثبيت الاعتماديات
+# 2) Install dependencies
 npm install
 
-# 3) إعداد متغيرات البيئة
+# 3) Set up environment variables
 cp .env.example .env
-# ثم عبِّئ القيم في ملف .env (انظر الجدول أدناه)
+# then fill in the values (see the table below)
 
-# 4) تشغيل بيئة التطوير (Express + Vite على المنفذ 3000)
+# 4) Start the dev environment (Express + Vite on port 3000)
 npm run dev
 ```
 
-<div dir="rtl">
+## 🔑 Environment Variables
 
-## 🔑 متغيرات البيئة
+Copy `.env.example` to `.env` and fill in:
 
-انسخ `.env.example` إلى `.env` وعبِّئ القيم التالية:
+| Variable | Provider | Description |
+|----------|----------|-------------|
+| `VITE_FIREBASE_API_KEY` | Firebase | Web app API key |
+| `VITE_FIREBASE_AUTH_DOMAIN` | Firebase | Auth domain |
+| `VITE_FIREBASE_PROJECT_ID` | Firebase | Project ID |
+| `VITE_FIREBASE_STORAGE_BUCKET` | Firebase | Storage bucket |
+| `VITE_FIREBASE_MESSAGING_SENDER_ID` | Firebase | Messaging sender ID |
+| `VITE_FIREBASE_APP_ID` | Firebase | App ID |
+| `CLOUDINARY_CLOUD_NAME` | Cloudinary | Cloud name (server-side) |
+| `CLOUDINARY_API_KEY` | Cloudinary | API key (server-side) |
+| `CLOUDINARY_API_SECRET` | Cloudinary | Secret — **never share it** |
 
-| المتغير | الجهة | الوصف |
-|---------|-------|-------|
-| `VITE_FIREBASE_API_KEY` | Firebase | مفتاح API لتطبيق الويب |
-| `VITE_FIREBASE_AUTH_DOMAIN` | Firebase | نطاق المصادقة |
-| `VITE_FIREBASE_PROJECT_ID` | Firebase | معرّف المشروع |
-| `VITE_FIREBASE_STORAGE_BUCKET` | Firebase | حاوية التخزين |
-| `VITE_FIREBASE_MESSAGING_SENDER_ID` | Firebase | معرّف المُرسل |
-| `VITE_FIREBASE_APP_ID` | Firebase | معرّف التطبيق |
-| `CLOUDINARY_CLOUD_NAME` | Cloudinary | اسم السحابة (للخادم) |
-| `CLOUDINARY_API_KEY` | Cloudinary | مفتاح API (للخادم) |
-| `CLOUDINARY_API_SECRET` | Cloudinary | السر — **لا تشاركه أبدًا** |
+> ⚠️ `VITE_*` variables are bundled into the client code, while the Cloudinary variables stay server-side only (`server.js`).
 
-> ⚠️ متغيرات `VITE_*` تُضمَّن في كود العميل، بينما متغيرات Cloudinary تبقى على الخادم فقط (`server.js`).
+## 📜 Available Scripts
 
-## 📜 الأوامر المتاحة
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Start the dev environment (Express + Vite middleware on port 3000) |
+| `npm run build` | Build the production bundle into `dist` |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Lint the codebase with oxlint |
+| `npm start` | Run the production server (serves `dist`) |
 
-| الأمر | الوظيفة |
-|-------|---------|
-| `npm run dev` | تشغيل بيئة التطوير (Express + Vite middleware على المنفذ 3000) |
-| `npm run build` | بناء نسخة الإنتاج في مجلد `dist` |
-| `npm run preview` | معاينة نسخة الإنتاج |
-| `npm run lint` | فحص الكود بـ oxlint |
-| `npm start` | تشغيل خادم الإنتاج (يقدّم `dist`) |
-
-## 🗂️ بنية المشروع
-
-</div>
+## 🗂️ Project Structure
 
 ```
-├── server.js                  # خادم Express: رفع/حذف صور Cloudinary + تقديم التطبيق
+├── server.js                  # Express server: Cloudinary upload/delete + app serving
 ├── docs/
-│   └── ARCHITECTURE_BIBLE.md  # المواصفة المعمارية الكاملة للمنصة
+│   └── ARCHITECTURE_BIBLE.md  # Full platform architecture specification
 └── src/
     ├── components/
-    │   ├── animations/        # TiltCard، CountUp، LiveToasts، Transition
-    │   ├── icons/             # أيقونات مخصّصة
-    │   ├── layout/            # Sidebar، Navbar، Footer، MainLayout، ProtectedRoute
-    │   └── ui/                # Card، Modal، Table، EmptyState، ...
-    ├── constants/             # ثوابت التطبيق
-    ├── context/               # Auth، Business، Theme، Language
-    ├── hooks/                 # هوكس مخصّصة (useBusiness، ...)
-    ├── lib/                   # تهيئة Firebase
-    ├── locales/               # ar.json + en.json (الترجمات)
-    ├── pages/                 # 13 صفحة: Dashboard، Products، Sales، Reports، ...
-    ├── styles/                # نظام التصميم المركزي (index.css — توكنز sys-*)
-    └── utils/                 # دوال مساعدة نقيّة
+    │   ├── animations/        # TiltCard, CountUp, LiveToasts, Transition
+    │   ├── icons/             # Custom icons
+    │   ├── layout/            # Sidebar, Navbar, Footer, MainLayout, ProtectedRoute
+    │   └── ui/                # Card, Modal, Table, EmptyState, ...
+    ├── constants/             # App constants
+    ├── context/               # Auth, Business, Theme, Language
+    ├── hooks/                 # Custom hooks (useBusiness, ...)
+    ├── lib/                   # Firebase initialization
+    ├── locales/               # ar.json + en.json (translations)
+    ├── pages/                 # 13 pages: Dashboard, Products, Sales, Reports, ...
+    ├── styles/                # Central design system (index.css — sys-* tokens)
+    └── utils/                 # Pure helper utilities
 ```
 
-<div dir="rtl">
+## 🏗️ Architecture Notes
 
-## 🏗️ لمحة معمارية
+- **Multi-tenant data isolation**: each business's data lives in Firestore under `/businesses/{businessId}/...` (products, sales, expenses, customers, suppliers) — no query can reach another tenant's data.
+- **Central design system**: all colors, fonts, and spacing are CSS tokens in `src/styles/index.css`, so a single change restyles every page automatically.
+- **Language & direction**: `LanguageContext` sets `dir` and `lang` on the document dynamically, with nested translations and a smart English fallback.
 
-- **عزل البيانات متعدد المستأجرين**: بيانات كل نشاط تجاري معزولة في Firestore تحت مسار `‎/businesses/{businessId}/...‎` (منتجات، مبيعات، مصاريف، عملاء، موردون) — فلا يمكن لأي استعلام الوصول لبيانات نشاط آخر.
-- **نظام تصميم مركزي**: كل الألوان والخطوط والمسافات توكنز CSS في `src/styles/index.css`، فأي تعديل عليها ينعكس على كل الصفحات تلقائيًا.
-- **اللغة والاتجاه**: `LanguageContext` يضبط `dir` و`lang` على مستوى المستند ديناميكيًا، مع ترجمات متداخلة وfallback ذكي للإنجليزية.
+📖 Full details in [`docs/ARCHITECTURE_BIBLE.md`](docs/ARCHITECTURE_BIBLE.md).
 
-📖 التفاصيل الكاملة في [`docs/ARCHITECTURE_BIBLE.md`](docs/ARCHITECTURE_BIBLE.md).
+## 👨‍💻 Author
 
-## 👨‍💻 المطوّر
-
-**علي يعقوب** — مطوّر Full Stack متخصّص في React وواجهات المستخدم
+**Ali Yaqoub** — Full Stack Developer focused on React & UI/UX
 
 <a href="https://github.com/ali-yaqoup">GitHub</a> • <a href="https://linktr.ee/ali_yaqoup_dev">Linktree</a>
 
 ---
 
-<p align="center">صُنع بشغف في فلسطين 🇵🇸</p>
-
-</div>
+<p align="center">Made with passion in Palestine 🇵🇸</p>

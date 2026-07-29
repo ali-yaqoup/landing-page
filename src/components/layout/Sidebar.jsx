@@ -20,19 +20,20 @@ function Logo() {
     <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
       <div
         style={{
-          width: 32,
-          height: 32,
-          borderRadius: 8,
-          background: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+          width: 34,
+          height: 34,
+          borderRadius: 9,
+          background: 'linear-gradient(135deg, #22d3ee, #3b82f6)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          boxShadow: '0 8px 18px -6px rgba(6,182,212,0.6)',
         }}
       >
-        <Zap size={16} color="#fff" strokeWidth={2.5} />
+        <Zap size={17} color="#04141b" strokeWidth={2.6} />
       </div>
-      <span style={{ fontWeight: 800, fontSize: '1.1rem', letterSpacing: '-0.03em', color: 'var(--text-1)' }}>
-        Stock<span style={{ color: 'var(--accent)' }}>Flow</span>
+      <span style={{ fontWeight: 800, fontSize: '1.15rem', letterSpacing: '-0.02em', color: 'var(--text-1)', fontFamily: 'var(--font-display)' }}>
+        ستوك<span style={{ color: 'var(--accent)' }}>فلو</span>
       </span>
     </div>
   );
@@ -59,6 +60,10 @@ function NavItems({ onItemClick }) {
 }
 
 export default function Sidebar({ isOpen, onClose }) {
+  const { dir } = useLanguage();
+  const isRTL = dir === 'rtl';
+  const offset = isRTL ? 300 : -300;
+
   return (
     <>
       <style>{`
@@ -76,7 +81,7 @@ export default function Sidebar({ isOpen, onClose }) {
         style={{
           width: 240,
           flexShrink: 0,
-          borderRight: '1px solid var(--border)',
+          borderInlineEnd: '1px solid var(--border)',
           flexDirection: 'column',
           position: 'sticky',
           top: 0,
@@ -103,22 +108,20 @@ export default function Sidebar({ isOpen, onClose }) {
                 onClick={onClose}
                 style={{
                   position: 'fixed',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background: 'rgba(0,0,0,0.5)',
+                  inset: 0,
+                  background: 'rgba(2,6,23,0.6)',
+                  backdropFilter: 'blur(2px)',
                   zIndex: 40,
                 }}
               />
               <motion.aside
-                initial={{ x: -280 }}
+                initial={{ x: offset }}
                 animate={{ x: 0 }}
-                exit={{ x: -280 }}
+                exit={{ x: offset }}
                 transition={{ type: 'tween', duration: 0.25 }}
                 style={{
                   position: 'fixed',
-                  left: 0,
+                  insetInlineStart: 0,
                   top: 0,
                   width: 280,
                   height: '100vh',
@@ -127,7 +130,7 @@ export default function Sidebar({ isOpen, onClose }) {
                   display: 'flex',
                   flexDirection: 'column',
                   overflowY: 'auto',
-                  boxShadow: '4px 0 24px rgba(0,0,0,0.2)',
+                  boxShadow: '0 0 40px rgba(0,0,0,0.45)',
                 }}
               >
                 <div

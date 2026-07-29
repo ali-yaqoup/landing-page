@@ -6,7 +6,8 @@ export function ThemeProvider({ children }) {
   const [theme, setThemeState] = useState(() => {
     const stored = localStorage.getItem('stockflow-theme')
     if (stored === 'dark' || stored === 'light') return stored
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    // Default to the signature dark theme (StockFlow brand identity)
+    return 'dark'
   })
 
   useEffect(() => {

@@ -1,8 +1,8 @@
-<div align="center">
+﻿<div align="center">
 
-# ⚡ StockFlow
+# âš¡ StockFlow
 
-**An Arabic-first business management platform — inventory, point of sale, and smart reports.**
+**An Arabic-first business management platform â€” inventory, point of sale, and smart reports.**
 
 <p>
   <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white&labelColor=0b1220" alt="React 19" />
@@ -17,30 +17,30 @@
 
 ---
 
-## 🧭 Overview
+## ðŸ§­ Overview
 
-**StockFlow** is a web platform for managing small-to-medium businesses — real-time inventory tracking, point-of-sale (POS) sales recording, expense logging, customer & supplier management, and clear profit reports that help owners make confident decisions.
+**StockFlow** is a web platform for managing small-to-medium businesses â€” real-time inventory tracking, point-of-sale (POS) sales recording, expense logging, customer & supplier management, and clear profit reports that help owners make confident decisions.
 
 Built **Arabic-first** (full RTL with English support), with a signature dark `slate + cyan` theme and interactive motion that makes the experience feel alive.
 
-## ✨ Features
+## âœ¨ Features
 
 | | Feature | Description |
 |---|---------|-------------|
-| 📊 | **Dashboard** | Live KPIs: sales, profit, margin, and low-stock alerts |
-| 📦 | **Products & Categories** | Full catalog with images, prices/costs, and a stock movement history |
-| 🛒 | **Sales (POS)** | Fast sale recording with automatic stock decrement |
-| 💸 | **Expenses** | Log and categorize operating expenses |
-| 👥 | **Customers & Suppliers** | Relationships, balances, and transaction history |
-| 📈 | **Reports** | Analytics and historical business performance |
-| 🏬 | **Branches & Warehouses** | Switch between branches/warehouses from the top bar |
-| 🖼️ | **Cloud images** | Product image uploads via Cloudinary with automatic optimization |
-| 🌍 | **Arabic / English** | Full i18n with dynamic RTL/LTR — Arabic is the default |
-| 🌗 | **Dark / Light theme** | Dark is the default brand identity, toggle anytime |
-| 🎬 | **Interactive motion** | Live POS simulator on the landing hero: 3D tilt, count-up numbers, live toasts (framer-motion) |
-| 🔐 | **Secure auth** | Firebase Authentication with protected routes |
+| ðŸ“Š | **Dashboard** | Live KPIs: sales, profit, margin, and low-stock alerts |
+| ðŸ“¦ | **Products & Categories** | Full catalog with images, prices/costs, and a stock movement history |
+| ðŸ›’ | **Sales (POS)** | Fast sale recording with automatic stock decrement |
+| ðŸ’¸ | **Expenses** | Log and categorize operating expenses |
+| ðŸ‘¥ | **Customers & Suppliers** | Relationships, balances, and transaction history |
+| ðŸ“ˆ | **Reports** | Analytics and historical business performance |
+| ðŸ¬ | **Branches & Warehouses** | Switch between branches/warehouses from the top bar |
+| ðŸ–¼ï¸ | **Cloud images** | Product image uploads via Cloudinary with automatic optimization |
+| ðŸŒ | **Arabic / English** | Full i18n with dynamic RTL/LTR â€” Arabic is the default |
+| ðŸŒ— | **Dark / Light theme** | Dark is the default brand identity, toggle anytime |
+| ðŸŽ¬ | **Interactive motion** | Live POS simulator on the landing hero: 3D tilt, count-up numbers, live toasts (framer-motion) |
+| ðŸ” | **Secure auth** | Firebase Authentication with protected routes |
 
-## 🛠️ Tech Stack
+## ðŸ› ï¸ Tech Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -54,7 +54,7 @@ Built **Arabic-first** (full RTL with English support), with a signature dark `s
 | Fonts | Cairo (headings) + Tajawal (body) |
 | Linting | oxlint |
 
-## 🚀 Quick Start
+## ðŸš€ Quick Start
 
 ```bash
 # 1) Clone the repository
@@ -72,7 +72,7 @@ cp .env.example .env
 npm run dev
 ```
 
-## 🔑 Environment Variables
+## ðŸ”‘ Environment Variables
 
 Copy `.env.example` to `.env` and fill in:
 
@@ -86,11 +86,11 @@ Copy `.env.example` to `.env` and fill in:
 | `VITE_FIREBASE_APP_ID` | Firebase | App ID |
 | `CLOUDINARY_CLOUD_NAME` | Cloudinary | Cloud name (server-side) |
 | `CLOUDINARY_API_KEY` | Cloudinary | API key (server-side) |
-| `CLOUDINARY_API_SECRET` | Cloudinary | Secret — **never share it** |
+| `CLOUDINARY_API_SECRET` | Cloudinary | Secret â€” **never share it** |
 
-> ⚠️ `VITE_*` variables are bundled into the client code, while the Cloudinary variables stay server-side only (`server.js`).
+> âš ï¸ `VITE_*` variables are bundled into the client code, while the Cloudinary variables stay server-side only (`server.js`).
 
-## 📜 Available Scripts
+## ðŸ“œ Available Scripts
 
 | Command | Purpose |
 |---------|---------|
@@ -100,42 +100,48 @@ Copy `.env.example` to `.env` and fill in:
 | `npm run lint` | Lint the codebase with oxlint |
 | `npm start` | Run the production server (serves `dist`) |
 
-## 🗂️ Project Structure
+## ðŸ—‚ï¸ Project Structure
 
 ```
-├── server.js                  # Express server: Cloudinary upload/delete + app serving
-├── docs/
-│   └── ARCHITECTURE_BIBLE.md  # Full platform architecture specification
-└── src/
-    ├── components/
-    │   ├── animations/        # TiltCard, CountUp, LiveToasts, Transition
-    │   ├── icons/             # Custom icons
-    │   ├── layout/            # Sidebar, Navbar, Footer, MainLayout, ProtectedRoute
-    │   └── ui/                # Card, Modal, Table, EmptyState, ...
-    ├── constants/             # App constants
-    ├── context/               # Auth, Business, Theme, Language
-    ├── hooks/                 # Custom hooks (useBusiness, ...)
-    ├── lib/                   # Firebase initialization
-    ├── locales/               # ar.json + en.json (translations)
-    ├── pages/                 # 13 pages: Dashboard, Products, Sales, Reports, ...
-    ├── styles/                # Central design system (index.css — sys-* tokens)
-    └── utils/                 # Pure helper utilities
+â”œâ”€â”€ server.js                  # Express server: Cloudinary upload/delete + app serving
+â”œâ”€â”€ docs/
+â”‚   â””â”€â”€ ARCHITECTURE_BIBLE.md  # Full platform architecture specification
+â””â”€â”€ src/
+    â”œâ”€â”€ components/
+    â”‚   â”œâ”€â”€ animations/        # TiltCard, CountUp, LiveToasts, Transition
+    â”‚   â”œâ”€â”€ icons/             # Custom icons
+    â”‚   â”œâ”€â”€ layout/            # Sidebar, Navbar, Footer, MainLayout, ProtectedRoute
+    â”‚   â””â”€â”€ ui/                # Card, Modal, Table, EmptyState, ...
+    â”œâ”€â”€ constants/             # App constants
+    â”œâ”€â”€ context/               # Auth, Business, Theme, Language
+    â”œâ”€â”€ hooks/                 # Custom hooks (useBusiness, ...)
+    â”œâ”€â”€ lib/                   # Firebase initialization
+    â”œâ”€â”€ locales/               # ar.json + en.json (translations)
+    â”œâ”€â”€ pages/                 # 13 pages: Dashboard, Products, Sales, Reports, ...
+    â”œâ”€â”€ styles/                # Central design system (index.css â€” sys-* tokens)
+    â””â”€â”€ utils/                 # Pure helper utilities
 ```
 
-## 🏗️ Architecture Notes
+## ðŸ—ï¸ Architecture Notes
 
-- **Multi-tenant data isolation**: each business's data lives in Firestore under `/businesses/{businessId}/...` (products, sales, expenses, customers, suppliers) — no query can reach another tenant's data.
+- **Multi-tenant data isolation**: each business's data lives in Firestore under `/businesses/{businessId}/...` (products, sales, expenses, customers, suppliers) â€” no query can reach another tenant's data.
 - **Central design system**: all colors, fonts, and spacing are CSS tokens in `src/styles/index.css`, so a single change restyles every page automatically.
 - **Language & direction**: `LanguageContext` sets `dir` and `lang` on the document dynamically, with nested translations and a smart English fallback.
 
-📖 Full details in [`docs/ARCHITECTURE_BIBLE.md`](docs/ARCHITECTURE_BIBLE.md).
+ðŸ“– Full details in [`docs/ARCHITECTURE_BIBLE.md`](docs/ARCHITECTURE_BIBLE.md).
 
-## 👨‍💻 Author
+## ðŸ‘¨â€ðŸ’» Author
 
-**Ali Yaqoub** — Full Stack Developer focused on React & UI/UX
+**Ali Yaqoub** â€” Full Stack Developer focused on React & UI/UX
 
-<a href="https://github.com/ali-yaqoup">GitHub</a> • <a href="https://linktr.ee/ali_yaqoup_dev">Linktree</a>
+<a href="https://github.com/ali-yaqoup">GitHub</a> â€¢ <a href="https://linktr.ee/ali_yaqoup_dev">Linktree</a>
 
 ---
 
-<p align="center">Made with passion in Palestine 🇵🇸</p>
+<p align="center">Made with passion in Palestine ðŸ‡µðŸ‡¸</p>
+
+## License & copyright
+
+Copyright © 2026 Ali Yaqoub. All rights reserved.
+
+This software and its contents are proprietary. Unauthorized copying, distribution, modification, or commercial use is prohibited without prior written permission from the copyright holder.
